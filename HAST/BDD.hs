@@ -164,7 +164,8 @@ compileBDD m VarOps{..} ftag = compile' where
             lift $ $d (deref m) res'
             return res
     compile' (Var x)       = do
-        [x] <- getAVar x
+        l <- getAVar x
+        let (x:xs) = l
         lift $ $rp ref x
         return x
     compile' (Let x f)     = do

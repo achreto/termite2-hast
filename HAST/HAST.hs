@@ -6,6 +6,7 @@ module HAST.HAST(AST(..),
                  nExistsMany,
                  printAST) where
 
+import Prelude hiding ((<$>))
 import Data.Text.Lazy hiding (intercalate, map, take, length)
 import Text.PrettyPrint.Leijen.Text
 
